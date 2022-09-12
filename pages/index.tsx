@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import ClassSelectForm from "../components/ClassSelect";
+import ClassSelectForm from "../components/ClassSelectForm";
 
 const Home: NextPage = () => {
   return (
