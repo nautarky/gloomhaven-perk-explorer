@@ -4,24 +4,28 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "standard-with-typescript",
-    "next/core-web-vitals",
     "airbnb",
     "airbnb/hooks",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   overrides: [],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
     sourceType: "module",
-    project: ["tsconfig.json"],
   },
-  plugins: ["react"],
+  plugins: ["react", "@typescript-eslint"],
+  root: true,
   rules: {
     "comma-dangle": ["error", "only-multiline"],
     "max-len": ["error", 120],
     "quotes": ["error", "double"],
-    "quote-props": ["error", "consistent"]
+    "quote-props": ["error", "consistent"],
+    "react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
   },
 };
