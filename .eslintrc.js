@@ -22,10 +22,20 @@ module.exports = {
   root: true,
   rules: {
     "comma-dangle": ["error", "only-multiline"],
+    "import/extensions": [0, "ignorePackages"],
+    "import/prefer-default-export": ["off"],
+    "no-shadow": ["off"],
     "max-len": ["error", 120],
     "quotes": ["error", "double"],
     "quote-props": ["error", "consistent"],
     "react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+  },
+  settings: {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   },
 };
