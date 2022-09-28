@@ -1,4 +1,4 @@
-name: Merge Acceptance Checks
+name: merge-checks
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
     pull_request:
       branches: [main]
 jobs:
-  test:
+  prebuild-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,6 +16,8 @@ jobs:
           node-version: ">=17.3.0"
       - name: Install NPM packages
         run: npm ci
+      - name: Run linting
+        run: npm run lint
       - name: Run unit tests
         run: npm test
       - name: Build app
