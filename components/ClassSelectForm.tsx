@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { useState } from "react";
 import { Listbox } from "@headlessui/react";
 
 import { GloomhavenClass } from "../types/gloomhaven";
 
-const ClassSelectForm: FunctionComponent = () => {
+const ClassSelectForm = () => {
   const [selectedClassName, setSelectedClassName] = useState(GloomhavenClass.InoxBrute);
 
   return (
