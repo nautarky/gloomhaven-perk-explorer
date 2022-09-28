@@ -1,4 +1,4 @@
-enum GloomhavenClass {
+export enum GloomhavenClass {
   InoxBrute = "Inox Brute",
   HumanScoundrel = "Human Scoundrel",
   OrchidSpellweaver = "Orchid Spellweaver",
@@ -7,4 +7,13 @@ enum GloomhavenClass {
   SavvasCragheart = "Savvas Cragheart",
 }
 
-export { GloomhavenClass };
+export enum AttackModifierOperation {
+  Add,
+  Multiply,
+  NullEffect,
+}
+
+export interface AttackModifier {
+  value: number;
+  op: AttackModifierOperation;
+}
